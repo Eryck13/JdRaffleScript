@@ -1,0 +1,1344 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="robots" content="noindex"> 
+  <meta http-equiv="cache-control" content="no-cache"> <meta http-equiv="pragma" content="no-cache"> <meta http-equiv="expires" content="-1"> 
+<title>JD Sports Competition</title>
+<link rel="shortcut icon" type="image/ico" href="https://www.jdsports.co.uk/skins/jdsports-desktop/public/img/icons/app/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style type="text/css">
+body {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+      }
+  
+    input[id^="comp_"] {
+      height: 30px;
+      padding: 5px !important;
+      box-sizing: border-box !important;
+      width: 70% !important;
+    }
+
+    input[id^="comp_"]:focus {
+      outline: none;
+    }
+
+    select[id^="comp_"] {
+      height: 30px !important;
+      cursor: pointer !important;
+    }
+
+    div.inputcontainer {
+      border: 1px solid #a2a2a2 !important;
+      width: 70% !important;
+      background-color: #f9f9f9 !important;
+    }
+
+    div > input, div > select {
+      border: 0px !important;
+      float: left !important;
+      width: 25% !important;
+      background-color: transparent !important;
+    }
+  .styled-select select {
+    width:70%!important;
+  height: 30px!important;
+    overflow: hidden!important;
+  background-color: #f9f9f9!important;
+    color: #000000!important;
+    border: 1px solid #a2a2a2!important;
+}
+
+    div > input {
+      width: 75% !important;
+      height: 24px !important;
+      padding: 0px 5px !important;
+      margin: 3px 0 !important;
+      border-left: 1px solid #a2a2a2 !important;
+    }
+
+    div.clear {
+      clear: both;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"] ~ label {
+      display: block;
+      margin: 5px auto;
+      text-align: center;
+    }
+
+    input[type="checkbox"] + label {
+      width: 30px;
+      height: 30px;
+      border: none;
+      display: block;
+      float: none;
+      position: relative;
+    background-color: #f9f9f9;
+      border: 1px solid #a2a2a2;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked + label:after {
+      position: absolute;
+      content: "";
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      background-image: url("https://reporting.jdsports.co.uk/images/180405_comp/tick_new.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+    }
+      input[type=text],input[type=email] {
+       width: 70%;
+     max-width:300px;
+       display: block;
+         border: 1px solid #a2a2a2;
+       background-color: #f9f9f9;
+       padding: 5px 10px;
+       box-sizing: border-box;
+       color: #1a1a1a;
+       font-size: 14px;
+     text-align: left;
+     }  
+    input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    }
+        input[type="submit"] {
+    width:60%;
+    padding: 10px 32px;
+        background-color: #000000;
+        color: #ffffff;
+        border: 1px solid #000000;
+        font-size:16px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #FFFFFF;
+        color: #000000;
+        border: 1px solid #000000;
+      } 
+  
+
+td { font-size:13px; mso-line-height-alt:13px; mso-margin-top-alt:0; }
+
+     @media only screen and (min-width: 120px) and  (max-width: 500px) {
+            /* Any mobile specific device changes can be inserted here */
+           
+                table[class="hide"], img[class="hide"], td[class="hide"] {
+                display: none !important;
+            }
+      table[class="table"], td[class="cell"] {
+                width: 50% !important;
+            }
+        
+    input[type=text] {
+       width: 90%;
+      }
+    .commms {
+      padding-top:10px !important;
+     }    
+      /* What it does: Forces table cells into full-width rows. */
+      td[class="stack-column"],
+      td[class="stack-column-center"] {
+        display: block !important;
+        width: 100% !important;
+        direction: ltr !important;
+        padding-left:0px !important;
+      }
+      td[class="width320"], table[class="width320"] {
+        display: block !important;
+        width: 100% !important;
+          
+      }
+      td[class="width420"], table[class="width420"] {
+        display: block !important;
+        width: 100% !important;
+        
+      }
+      td[class="width320 height50"], table[class="width320 height 50"] {
+        display: block !important;
+        width: 100% !important;
+        height:50px !important;
+        line-height: 50px !important;
+        
+      }
+      img[class="width320"] {
+        display: block !important;
+        width: 100% !important;
+        height:auto !important;
+      }
+      
+      td[class="pad10"], table[class="pad10"] {
+        padding:10px !important;
+      }
+      td[class="padleft"], table[class="padleft"] {
+        padding-left:20px !important;
+      }
+      input[id^="comp_"], div.inputcontainer {
+        width: 90%;
+      }
+     }
+     
+</style>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+    $("input[id$=hold]").each(function() {
+      
+      if($(this).is(":checked")) {
+
+        if($(this).attr("id") == "smshold") {
+          $(this).siblings("input").val("0");
+        } else {
+          $(this).siblings("input").val("1");
+        }
+
+      }
+
+    })
+
+    $("input[id$=hold]").change(function() {
+
+      if($(this).is(":checked")) {
+
+        if($(this).attr("id") == "smshold") {
+          $(this).siblings("input").val("0");
+        } else {
+          $(this).siblings("input").val("1");
+        }
+
+      } else {
+
+        if($(this).attr("id") == "smshold") {
+          $(this).siblings("input").val("1");
+        } else {
+          $(this).siblings("input").val("0");
+        }
+
+      }
+    })
+  })
+
+</script>
+
+<script language="JavaScript1.2">
+
+  //Advanced Email Check credit-
+  //By JavaScript Kit (https://www.javascriptkit.com)
+  //Over 200+ free scripts here!
+
+  var testresults
+
+  function checkemail(){
+    var str=document.validation.comp_email.value
+    var filter=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+    if (str.length==0)
+      testresults=true
+    else
+    if (filter.test(str))
+      testresults=true
+    else {
+      alert("Please input a valid email address!")
+      testresults=false
+    }
+
+    return (testresults)
+
+    }
+
+    function mergemobile() {
+      var code = document.getElementById("comp_countrycode").value;
+      var mobile = document.getElementById("comp_mobile_end").value;
+
+      document.getElementById("comp_mobile").value = code + mobile;
+      console.log(document.getElementById("comp_mobile").value);
+    }
+
+</script>
+<script type="text/javascript">
+  function checkbae(){
+    if (document.layers||document.getElementById||document.all) {
+      if( document.getElementById("comp_mobile_end").value.length > 0 ) {
+        mergemobile();
+      }
+
+      return checkemail();
+    } else {
+      return true
+    }
+  }
+</script>
+</head>
+<body style="padding:0; margin:0; -webkit-font-smoothing: antialiased; width:100% !important; background:#FFFFFF; -webkit-text-size-adjust:none;"><form action="/cgi-bin/msite?yeezy_comp%2Ba%2B0%2B0%2B0%2BDC028425%2B0%26_p%3D_2%26utm_source%3DRedEye%26utm_medium%3DEmail%26utm_campaign%3DYeezy%20Boost%20351%20Clay%26utm_content%3D0905%20Yeezy%20Clay" method="post" name="validation" id="validation"  onSubmit="return checkbae()">
+<table width="840" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#F2F2F2" class="width320">
+  <tr>
+    <td style="padding:40px; padding-bottom:0px" class="pad10"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="width320">
+      <tr>
+        <td bgcolor="#ffffff" class="width320"><img src="https://reporting.jdsports.co.uk/images/yeezy/header.jpg" width="100%" alt="Competition Header" class="width320" style="display:block"/></td>
+      </tr>
+    </table></td>
+  </tr>
+    <tr>
+    <td style="padding:40px; padding-bottom:0px" class="pad10"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="width320">
+      <tr>
+        <td class="width320"><img src="https://reporting.jdsports.co.uk/images/yeezy/body.jpg" width="100%" alt="Competition Details" class="width320" style="display:block"/></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td style="padding:40px"  class="pad10"><table width="100%" border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+        <td bgcolor="#ffffff" class="padleft">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </table>          
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="375" style="padding-left:20px; font-size:16px" class="stack-column" valign="top">
+                <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                 <tr>
+            <td style="padding-bottom:20px; font-size:16px" class="stack-column" valign="top">Firstname<span style="color:#db3939;">*</span><br>
+                <label for="textfield"></label>
+              <input type="text" name="comp_firstname" id="comp_firstname" placeholder="First" value="6tOu"  style="text-transform:capitalize"></td>
+              </tr>
+              <tr>
+              <td style="padding-bottom:20px; font-size:16px"class="stack-column" valign="top">Lastname<span style="color:#db3939;">*</span><br>
+                 <input type="text" name="comp_lastname" id="comp_lastname" placeholder="Last" value="lsTTq^TOuw"  style="text-transform:capitalize">
+                 </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom:20px; font-size:16px" class="stack-column">
+                      Email<span style="color:#db3939;">*</span><br>
+                      <label for="textfield">
+                      </label>
+                      <input type="text" name="comp_email" id="comp_email" value="KUQtC3dEtwwwAUutsuq" style="text-transform:lowercase">
+                      </td>
+                    </tr>
+                    <tr>
+                    <td style="font-size:16px" class="stack-column">
+                      Paypal email address<span style="color:#db3939;">*</span><br>
+                      <label for="textfield">
+                      </label>
+                      <input type="email" name="paypal_email" id="comp_paypalemail" value="" style="text-transform:lowercase">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-top: 20px; padding-bottom:20px; font-size:16px" class="stack-column">Mobile Number<span style="color:#db3939;">*</span><br>
+                        <label for="textfield">
+                        </label>
+                        <div class="inputcontainer">  
+                          <select name="comp_countrycode" id="comp_countrycode">
+                            <option value="+44">+44</option>
+                            <option value="+33">+33</option>
+                            <option value="+46">+46</option>
+                            <option value="+32">+32</option>
+                            <option value="+31">+31</option>
+                            <option value="+49">+49</option>
+                            <option value="+34">+34</option>
+                            <option value="+39">+39</option>
+                            <option value="+358">+358</option>
+                            <option value="+45">+45</option>
+                            <option value="+6">+6</option>
+                            <option value="+61">+61</option>
+                            <option value="+353">+353</option>
+                          </select>
+                          <input type="text" name="comp_mobile_end" id="comp_mobile_end" pattern="^[1-9][0-9-+s()]*$" onfocusout="this.value = this.value.replace(/^0/, '')">
+                          <input type="hidden" name="comp_mobile" id="comp_mobile">
+                          <div class="clear"></div>
+                        </div>
+                      </td>
+                    </tr>   
+                    <tr>
+                      <td style="font-size:16px" class="stack-column">
+                        UK footwear size<span style="color:#db3939;">*</span><br> 
+                        <div class="styled-select">                     
+                         <select name="shoesize" id="shoesize">
+                              <option value=" ">Please select...</option>
+							                 <option value="3.5" >3.5</option>
+                                <option value="4" >4</option>
+                               <option value="4.5" >4.5</option> -->
+                                <option value="5" >5</option>
+                                <option value="5.5" >5.5</option> 
+                                <option value="6" >6</option>
+                                <option value="6.5" >6.5</option>
+                                <option value="7" >7</option>
+                                <option value="7.5" >7.5</option>
+                                <option value="8" >8</option>
+                                <option value="8.5" >8.5</option>
+                                <option value="9" >9</option>
+                                <option value="9.5" >9.5</option>
+								                <option value="10" >10</option>
+                                <option value="10.5" >10.5</option>
+                                <option value="11" >11</option>
+                                <option value="11.5" >11.5</option>
+                                <option value="12" >12</option>
+                                <option value="12.5" >12.5</option> 
+                                 <option value="13" >13</option> 
+                                <option value="13.5" >13.5</option>
+                                <option value="14" >14</option>
+								
+                        </select>  
+                        <br> <br><br>
+                        </div>                     
+                      </td>
+                    </tr>                 
+                  </table>
+                </td>
+              <td width="375" style="padding-left:20px" class="stack-column" valign="top">
+                <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                 <tr>
+                      <td style="font-size:16px" class="stack-column">
+                        Number and street address<span style="color:#db3939;">*</span><br>
+                        <label for="textfield">
+                        </label>
+                        <input type="text" name="comp_address1" id="comp_address1" value="C lR{^tUX lq^^Opq">
+                        
+                      </td>
+                    </tr>   
+                     <tr>
+                      <td style="padding-top: 20px; font-size:16px" class="stack-column">
+                        Address Line 2<br>
+                        <label for="textfield">
+                        </label>
+                        <input type="text" name="comp_address2" id="comp_address2" value="">
+                      </td>
+                    </tr>
+                     <tr>
+                      <td style="padding-top: 20px; font-size:16px" class="stack-column">
+                        Town/City<span style="color:#db3939;">*</span><br>
+                        <label for="textfield">
+                        </label>
+                        <input type="text" name="comp_address3" id="comp_address3" value="IUuPUu"> 
+                      </td>
+                    </tr>  
+                     <tr>
+                      <td style="padding-top: 20px; font-size:16px" class="stack-column">
+                        County<span style="color:#db3939;">*</span><br>
+                        <div class="styled-select">                     
+ <select name="comp_address4" id="comp_address4">  
+                         <option value="">Please select...</option> 
+                         <option disabled="disabled">-- England --</option>                         
+                <option value="Bedfordshire" >Bedfordshire</option>
+                        <option value="Buckinghamshire" >Buckinghamshire</option>
+                        <option value="Cambridgeshire" >Cambridgeshire</option>
+                        <option value="Cheshire" >Cheshire</option>
+                        <option value="Cleveland" >Cleveland</option>
+                        <option value="Cornwall" >Cornwall</option>
+                        <option value="Cumbria" >Cumbria</option>
+                        <option value="Derbyshire" >Derbyshire</option>
+                        <option value="Devon" >Devon</option>
+                        <option value="Dorset" >Dorset</option>
+                        <option value="Durham" >Durham</option>
+                        <option value="East Sussex" >East Sussex</option>
+                        <option value="Essex" >Essex</option>
+                        <option value="Gloucestershire" >Gloucestershire</option>
+                        <option value="Greater London" >Greater London</option>
+                        <option value="Greater Manchester" >Greater Manchester</option>
+                        <option value="Hampshire" >Hampshire</option>
+                        <option value="Hertfordshire" >Hertfordshire</option>
+                        <option value="Kent" >Kent</option>
+                        <option value="Lancashire" >Lancashire</option>
+                        <option value="Leicestershire" >Leicestershire</option>
+                        <option value="Lincolnshire" >Lincolnshire</option>
+                        <option value="Merseyside" >Merseyside</option>
+                        <option value="Norfolk" >Norfolk</option>
+                        <option value="North Yorkshire" >North Yorkshire</option>
+                        <option value="Northamptonshire" >Northamptonshire</option>
+                        <option value="Northumberland" >Northumberland</option>
+                        <option value="Nottinghamshire" >Nottinghamshire</option>
+                        <option value="Oxfordshire" >Oxfordshire</option>
+                        <option value="Shropshire" >Shropshire</option>
+                        <option value="Somerset" >Somerset</option>
+                        <option value="South Yorkshire" >South Yorkshire</option>
+                        <option value="Staffordshire" >Staffordshire</option>
+                        <option value="Suffolk" >Suffolk</option>
+                        <option value="Surrey" >Surrey</option>
+                        <option value="Tyne and Wear" >Tyne and Wear</option>
+                        <option value="Warwickshire" >Warwickshire</option>
+                        <option value="West Berkshire" >West Berkshire</option>
+                        <option value="West Midlands" >West Midlands</option>
+                        <option value="West Sussex" >West Sussex</option>
+                        <option value="West Yorkshire" >West Yorkshire</option>
+                        <option value="Wiltshire" >Wiltshire</option>
+                        <option value="Worcestershire" >Worcestershire</option>
+                        <option disabled="disabled">-- Wales --</option>
+                        <option value="Anglesey" >Anglesey</option>
+                        <option value="Breconshire" >Breconshire</option>
+                        <option value="Caernarvonshire<" >Caernarvonshire</option>
+                        <option value="Cardiganshire" >Cardiganshire</option>
+                        <option value="Carmarthenshire" >Carmarthenshire</option>
+                        <option value="Denbighshire" >Denbighshire</option>
+                        <option value="Flintshire" >Flintshire</option>
+                        <option value="Glamorgan" >Glamorgan</option>
+                        <option value="Merionethshire" >Merionethshire</option>
+                        <option value="Monmouthshire" >Monmouthshire</option>
+                        <option value="Montgomeryshire" >Montgomeryshire</option>
+                        <option value="Pembrokeshire" >Pembrokeshire</option>
+                        <option value="Radnorshire" >Radnorshire</option>
+                        <option disabled="disabled">-- Scotland --</option>
+                        <option value="Aberdeen City" >Aberdeen City</option>
+                        <option value="Aberdeenshire" >Aberdeenshire</option>
+                        <option value="Angus" >Angus</option>
+                        <option value="Argyll and Bute" >Argyll and Bute</option>
+                        <option value="City of Edinburgh" >City of Edinburgh</option>
+                        <option value="Clackmannanshire" >Clackmannanshire</option>
+                        <option value="Dumfries and Galloway" >Dumfries and Galloway</option>
+                        <option value="Dundee City" >Dundee City</option>
+                        <option value="East Ayrshire" >East Ayrshire</option>
+                        <option value="East Dunbartonshire" >East Dunbartonshire</option>
+                        <option value="East Lothian" >East Lothian</option>
+                        <option value="East Renfrewshire" >East Renfrewshire</option>
+                        <option value="Eilean Siar" >Eilean Siar</option>
+                        <option value="Falkirk" >Falkirk</option>
+                        <option value="Fife" >Fife</option>
+                        <option value="Glasgow City" >Glasgow City</option>
+                        <option value="Highland" >Highland</option>
+                        <option value="Inverclyde" >Inverclyde</option>
+                        <option value="Midlothian" >Midlothian</option>
+                        <option value="Moray" >Moray</option>
+                        <option value="North Ayrshire" >North Ayrshire</option>
+                        <option value="North Lanarkshire" >North Lanarkshire</option>
+                        <option value="Orkney Islands" >Orkney Islands</option>
+                        <option value="Perth and Kinross" >Perth and Kinross</option>
+                        <option value="Renfrewshire" >Renfrewshire</option>
+                        <option value="Scottish Borders" >Scottish Borders</option>
+                        <option value="Shetland Islands" >Shetland Islands</option>
+                        <option value="South Ayrshire" >South Ayrshire</option>
+                        <option value="South Lanarkshire" >South Lanarkshire</option>
+                        <option value="Stirling" >Stirling</option>
+                        <option value="West Dunbartonshire" >West Dunbartonshire</option>
+                        <option value="West Lothian" >West Lothian</option>
+                        <option disabled="disabled">-- Northern Ireland --</option>
+                        <option value="Antrim" >Antrim</option>
+                        <option value="Armagh" >Armagh</option>
+                        <option value="Down" >Down</option>
+                        <option value="Fermanagh" >Fermanagh</option>
+                        <option value="Derry and Londonderry" >Derry and Londonderry</option>
+                        <option value="Tyrone" >Tyrone</option>
+                        </select><br>
+
+</div>
+                      </td>
+                    </tr>                                                   
+                    <tr>
+                      <td style="padding-top: 20px; font-size:16px" class="stack-column">
+                        Postcode<span style="color:#db3939;">*</span><br>
+                        <label for="textfield">
+                        </label>
+                        <input type="text" name="comp_postcode" id="comp_postcode" value="jXCcS$" style="text-transform:uppercase">
+                      </td>
+                    </tr>                                    
+                  <tr>
+                    <td style="font-size:16px; padding-bottom: 10px; padding-top:20px;">Communication preferences<br />
+                      <span style="font-size: 12px; line-height: 16px;"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                        <tr>
+                          <td style="font-size:16px" width="60">
+                            <input name="emailhold" class="hide" type="checkbox" id="emailhold" >
+                            <label for="emailhold"></label>
+                            <label for="emailhold">Email</label>
+                            <input name="emailpermit" class="hide" type="hidden" value="W^{q" id="emailpermit">
+                          </td>
+                          <td style="font-size:16px" width="60">
+                            <input name="smshold" class="hide" type="checkbox" id="smshold" >
+                            <label for="smshold"></label>
+                            <label for="smshold">SMS</label>
+                            <input name="sms_optout" class="hide" type="hidden" value="" id="sms_optout">
+                          </td>
+                          <td>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 11px; line-height: 14px; padding-top: 10px; padding-right:10px;">
+                      By ticking any of the above you agree to receive marketing communications from JD Sports Fashion PLC via the channels selected. We will use your data in accordance with our <a href="https://www.jdsports.co.uk/customer-service/privacy/" target="_blank" title="Privacy Policy" style="color: #000000;">Privacy Policy</a>.<br /><br />
+                      By submitting the form you agree to the <a href="https://www.jdsports.co.uk/customer-service/terms/" target="_blank" title="Terms &amp; Conditions" style="color: #000000;">Terms & Conditions</a> below.
+                    </td>
+                  </tr>
+                </table>
+                <br>
+                <input alt="Submit now  &gt;&gt;" type="submit" name="submit" id="submit" value="ENTER NOW" />
+                <input type="hidden" name="comp_yeezy_1" value="1">
+              </td>
+            </tr>
+          </table>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </table></td>
+      </tr>
+    </table></td>
+  </tr>
+    <tr>
+    <td style="padding:40px; padding-top:0px" class="pad10"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="width320">
+      <tr>
+        <td bgcolor="#F2F2F2" class="width320" style="color: #000000; padding-left:40px; padding-right:40px; padding-bottom:20px">
+<strong style="text-decoration: underline;">Yeezy Boost 350 V2 Black JDX Exclusive Raffle </strong>
+<br /><br />
+By taking part in this competition you accept and agree to these terms and conditions. If you do not agree with any of these terms and conditions, then you should not take part in the competition. It is your responsibility to ensure that you review the current terms and conditions before entering the competition. We, JD Sports Fashion plc ("JD Sports"), recommend that you print and store or save a copy of these terms and conditions for future reference during the competition. <strong>JD Sports</strong> is the promoter of this competition. 
+<br /><br />
+<strong style="text-decoration: underline;">1.&nbsp;What can you win? </strong>
+<br /><br />
+There will be 4156 winners who will each win the opportunity to purchase one pair of adidas Yeezy Boost 350 V2 Black (the <strong>"Prize"</strong>) via PayPal only.
+<br /><br />
+The Trainers are subject to availability (including availability of sizes, styles and colours). The Prize may not be exchanged for a cash value, nor is it transferable. The Prize is subject to winner confirmation (i.e. <strong>JD Sports</strong> has been able to contact winners and has been able to confirm eligibility). <strong>JD Sports</strong> has the right to change, alter or withdraw the raffle or the Prize at any time due to any change in any applicable law or any events outside the control of <strong>JD Sports</strong>. <strong>JD Sports</strong> shall not be responsible for any delay, cancellation or rescheduling of the raffle or the Prize. If any part of the Prize is not available or paid for through PayPal by 12:00pm on 6th May 2019 (for whatever reason), <strong>JD Sports</strong> is under no obligation to supply an alternative Prize and any unclaimed Trainers will go into general sale online at 07:00am on the 7th May 2019.
+<br /><br />
+<strong style="text-decoration: underline;">2.&nbsp;<strong style="text-decoration: underline;">What is excluded from the Prize?</strong> </strong>
+<br /><br />
+It is the winners' responsibility to organise and pay for anything excluded from the Prize. 
+<br /><br />
+<strong style="text-decoration: underline;">3.&nbsp;Who can enter?</strong>
+<br /><br />
+To be eligible for the raffle, customers must have signed up to JDX Unlimited (<strong>JD Sports</strong> &pound;9.99 Membership offering) via the <strong>JD Sports</strong> app by 11:59pm on the 4th June 2019. <strong>JD Sports</strong> reserve the rights to open this promotion to members who have not bought JDX.
+<br /><br />
+Entrants must be aged 18 years or over and, if successful, be available to purchase the trainers online via PayPal only by 12:00pm on 6th June 2019. Entrants under the age of 18 years old or over and, if successful, be available to pay the PayPal invoice that <strong>JD Sports</strong> will have raised.
+<br /><br />
+Employees (and their immediate family) of the <strong>JD Sports</strong> group ( <a href="http://www.jdplc.com/our-group/sports-fashion.aspx" target="_blank" style="text-decoration: underline; color: #000000;">http://www.jdplc.com/our-group/sports-fashion.aspx</a>), or anyone else professionally connected with this raffle are not eligible to enter the raffle. <strong>JD Sports</strong> reserves the right (at its sole discretion) to decide if the eligibility criteria are met. If the eligibility criteria are not met, the entry will be invalid.
+<br /><br />
+<strong style="text-decoration: underline;">4.&nbsp;How to enter</strong>
+<br /><br />
+To be eligible for the raffle, customers must have signed up to JDX Unlimited (<strong>JD Sports</strong> free next day delivery offering) via the <strong>JD Sports</strong> app by 11:59pm on the 4th June 2019.
+<br /><br />
+From the 25th May JDX members will be sent an exclusive raffle email with a link to the JDX raffle landing page. Entrants will have from 25th May 2019 to 11:59pm on 5th June 2019 to enter their full details on the landing page. This includes - entering their name, email address, PayPal registered email address, UK shoe size, FULL address & postcode and all other fields within the form. Incomplete entries will be void from the raffle.
+<br /><br />
+Internet service providers' fees may apply when accessing the internet. No purchase is necessary to enter the competition.
+<br /><br />
+By submitting any films or photographs as part of the competition and by entering the competition entrants agree that <strong>JD Sports</strong> (and its affiliates) may use any films or photographs uploaded to market and promote the competition and for general marketing purposes.
+<br /><br />
+Participation is limited to one entry per person. If more than one such entry is received, only the first entry will be accepted. No responsibility is taken for entries that are lost, delayed, misdirected or incomplete or cannot be delivered or entered for any technical or other reason.
+<br /><br />
+<strong style="text-decoration: underline;">5.&nbsp;Closing Times </strong>
+<br /><br />
+The raffle will be open on the 25th May 2019 at 05:00am. Yeezy Boost 350 V2 are available to purchase via PayPal by successful entrants only, between point of being notified from 11:00am on the 28th May 2019 until 12:00pm on the 6th June 2019. Any entries received after this date and time will not be valid. 
+<br /><br />
+<strong style="text-decoration: underline;">6.&nbsp;How are winners selected? </strong>
+<br /><br />
+Winners are decided on a first come first served basis and are allocated according to the number of Yeezy Boost 350 V2 trainers available in each size. The decision of <strong>JD Sports</strong> is final and binding on all entrants. No correspondence will be entered regarding the selection of the winners (other than with the winners themselves).
+<br /><br />
+The winners will be notified via a PayPal notification from 11:00am on the 28th May 2019 and must complete the PayPal transaction by 12:00pm on the 6th June 2019 to secure their pair of Yeezy Boost 350 V2 Black. Once you have completed your PayPal transaction you will receive a confirmation email from <strong>JD Sports</strong> by 6pm on the day of payment.
+<br /><br />
+If funds are in your PayPal account, these will automatically be deducted from your account. If you have a card/bank account linked to your PayPal account which is to cover insufficient PayPal balances, this will take 2/3 days to debit the card/account used.
+<br /><br />
+Winners will only be able to purchase the size selected nominated during sign up to the raffle.
+<br /><br />
+<strong style="text-decoration: underline;">7.&nbsp;Winners' Responsibilities </strong>
+<br /><br />
+It is the winners' responsibility to: (i) organise and pay costs for anything excluded from the Prize, including travel to and from a Participating Store and refreshments; (ii) complete all stages of the How to enter section above and present evidence of such completion to a member of staff in a Participating Store; (iii) provide accurate contact details; (iv) provide valid proof of age, which is required to enter the competition; (v) adhere to local laws in the UK (vi) comply with any rules, instructions, requirements, terms and conditions or regulations of the event organiser.] <strong>JD Sports</strong> will not be liable to the winners or any other persons where they fail to comply with such responsibilities and any such failure may result in forfeiture of the Prize. 
+<br /><br />
+<strong style="text-decoration: underline;">8.&nbsp;Personal information  </strong>
+<br /><br />
+By ticking the appropriate opt in boxes you agree that you will be opted in to receive regular communication from <strong>JD Sports</strong> (and its affiliates). For a list of <strong>JD Sports</strong> affiliates who may send marketing communications, please click on this link:  <a href="http://www.jdplc.com/our-group/sports-fashion.aspx" target="_blank" style="text-decoration: underline; color: #000000;">http://www.jdplc.com/our-group/sports-fashion.aspx</a>). <strong>JD Sports</strong> will use personal information which you provide, or which we obtain through our dealings with you, to sign you up to marketing materials provided by <strong>JD Sports</strong> (and its affiliates) and to administer the competition. We may also use your personal data to tell you about <strong>JD Sports</strong> (and <strong>JD Sports</strong> affiliates) products and offers, and for market research including analysis and development of our products and customer relationships. For full details on how <strong>JD Sports</strong> uses your information, view our Privacy Policy here:  <a href="http://www.jdsports.co.uk/customer-service/privacy" target="_blank" style="text-decoration: underline; color: #000000;">http://www.jdsports.co.uk/customer-service/privacy</a>. You can unsubscribe at any time by following the instructions contained in the promotional emails. If you do not wish to receive marketing communication from <strong>JD Sports</strong> (and <strong>JD Sports</strong> affiliates) please do not tick the appropriate opt in boxes above.
+<br /><br />
+<strong style="text-decoration: underline;">9.&nbsp;Publicity </strong>
+<br /><br />
+By taking part in the competition, entrants agree to participate in publicity at <strong>JD Sports</strong>' request if they are a winner of the competition. Entrants agree that <strong>JD Sports</strong> (or any third party nominated by <strong>JD Sports</strong>) may in its sole discretion use their name, image, any relevant video footage of them and comments relating to the Prize and their experience for future promotional, marketing and publicity purposes in any media worldwide without notice and without any fee being paid (including for the avoidance of doubt when responding to any third party). 
+<br /><br />
+<strong><strong>JD Sports</strong> reserves the right to withdraw the Prize (or any part of it) if a winner breaches any of the terms in these terms and conditions or if they are found to have acted in a dishonest or fraudulent manner.</strong> 
+<br /><br />
+If you wish to contact <strong>JD Sports</strong> in relation to the competition, please use the following address: Yeezy Boost 350 V2 Black Online Competition, JD Sports Fashion plc, Edinburgh House, Hollinsbrook Way, Pilsworth, Bury, Lancashire, BL9 8RR, United Kingdom.
+<br /><br />
+
+</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</form>
+<img alt="" height="1" src="/cgi-bin/rr//images/blank.gif" width="1" />
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="robots" content="noindex"> 
+  <meta http-equiv="cache-control" content="no-cache"> <meta http-equiv="pragma" content="no-cache"> <meta http-equiv="expires" content="-1"> 
+<title>JD Sports Competition</title>
+<link rel="shortcut icon" type="image/ico" href="https://www.jdsports.co.uk/skins/jdsports-desktop/public/img/icons/app/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style type="text/css">
+body {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+      }
+  
+    input[id^="comp_"] {
+      height: 30px;
+      padding: 5px !important;
+      box-sizing: border-box !important;
+      width: 70% !important;
+    }
+
+    input[id^="comp_"]:focus {
+      outline: none;
+    }
+
+    select[id^="comp_"] {
+      height: 30px !important;
+      cursor: pointer !important;
+    }
+
+    div.inputcontainer {
+      border: 1px solid #a2a2a2 !important;
+      width: 70% !important;
+      background-color: #f9f9f9 !important;
+    }
+
+    div > input, div > select {
+      border: 0px !important;
+      float: left !important;
+      width: 25% !important;
+      background-color: transparent !important;
+    }
+  .styled-select select {
+    width:70%!important;
+  height: 30px!important;
+    overflow: hidden!important;
+  background-color: #f9f9f9!important;
+    color: #000000!important;
+    border: 1px solid #a2a2a2!important;
+}
+
+    div > input {
+      width: 75% !important;
+      height: 24px !important;
+      padding: 0px 5px !important;
+      margin: 3px 0 !important;
+      border-left: 1px solid #a2a2a2 !important;
+    }
+
+    div.clear {
+      clear: both;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"] ~ label {
+      display: block;
+      margin: 5px auto;
+      text-align: center;
+    }
+
+    input[type="checkbox"] + label {
+      width: 30px;
+      height: 30px;
+      border: none;
+      display: block;
+      float: none;
+      position: relative;
+    background-color: #f9f9f9;
+      border: 1px solid #a2a2a2;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked + label:after {
+      position: absolute;
+      content: "";
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      background-image: url("https://reporting.jdsports.co.uk/images/180405_comp/tick_new.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+    }
+      input[type=text],input[type=email] {
+       width: 70%;
+     max-width:300px;
+       display: block;
+         border: 1px solid #a2a2a2;
+       background-color: #f9f9f9;
+       padding: 5px 10px;
+       box-sizing: border-box;
+       color: #1a1a1a;
+       font-size: 14px;
+     text-align: left;
+     }  
+    input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    }
+        input[type="submit"] {
+    width:60%;
+    padding: 10px 32px;
+        background-color: #000000;
+        color: #ffffff;
+        border: 1px solid #000000;
+        font-size:16px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #FFFFFF;
+        color: #000000;
+        border: 1px solid #000000;
+      } 
+  
+
+td { font-size:13px; mso-line-height-alt:13px; mso-margin-top-alt:0; }
+
+     @media only screen and (min-width: 120px) and  (max-width: 500px) {
+            /* Any mobile specific device changes can be inserted here */
+           
+                table[class="hide"], img[class="hide"], td[class="hide"] {
+                display: none !important;
+            }
+      table[class="table"], td[class="cell"] {
+                width: 50% !important;
+            }
+        
+    input[type=text] {
+       width: 90%;
+      }
+    .commms {
+      padding-top:10px !important;
+     }    
+      /* What it does: Forces table cells into full-width rows. */
+      td[class="stack-column"],
+      td[class="stack-column-center"] {
+        display: block !important;
+        width: 100% !important;
+        direction: ltr !important;
+        padding-left:0px !important;
+      }
+      td[class="width320"], table[class="width320"] {
+        display: block !important;
+        width: 100% !important;
+          
+      }
+      td[class="width420"], table[class="width420"] {
+        display: block !important;
+        width: 100% !important;
+        
+      }
+      td[class="width320 height50"], table[class="width320 height 50"] {
+        display: block !important;
+        width: 100% !important;
+        height:50px !important;
+        line-height: 50px !important;
+        
+      }
+      img[class="width320"] {
+        display: block !important;
+        width: 100% !important;
+        height:auto !important;
+      }
+      
+      td[class="pad10"], table[class="pad10"] {
+        padding:10px !important;
+      }
+      td[class="padleft"], table[class="padleft"] {
+        padding-left:20px !important;
+      }
+      input[id^="comp_"], div.inputcontainer {
+        width: 90%;
+      }
+     }
+     
+</style>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+    $("input[id$=hold]").each(function() {
+      
+      if($(this).is(":checked")) {
+
+        if($(this).attr("id") == "smshold") {
+          $(this).siblings("input").val("0");
+        } else {
+          $(this).siblings("input").val("1");
+        }
+
+      }
+
+    })
+
+    $("input[id$=hold]").change(function() {
+
+      if($(this).is(":checked")) {
+
+        if($(this).attr("id") == "smshold") {
+          $(this).siblings("input").val("0");
+        } else {
+          $(this).siblings("input").val("1");
+        }
+
+      } else {
+
+        if($(this).attr("id") == "smshold") {
+          $(this).siblings("input").val("1");
+        } else {
+          $(this).siblings("input").val("0");
+        }
+
+      }
+    })
+  })
+
+</script>
+
+<script language="JavaScript1.2">
+
+  //Advanced Email Check credit-
+  //By JavaScript Kit (https://www.javascriptkit.com)
+  //Over 200+ free scripts here!
+
+  var testresults
+
+  function checkemail(){
+    var str=document.validation.comp_email.value
+    var filter=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+    if (str.length==0)
+      testresults=true
+    else
+    if (filter.test(str))
+      testresults=true
+    else {
+      alert("Please input a valid email address!")
+      testresults=false
+    }
+
+    return (testresults)
+
+    }
+
+    function mergemobile() {
+      var code = document.getElementById("comp_countrycode").value;
+      var mobile = document.getElementById("comp_mobile_end").value;
+
+      document.getElementById("comp_mobile").value = code + mobile;
+      console.log(document.getElementById("comp_mobile").value);
+    }
+
+</script>
+<script type="text/javascript">
+  function checkbae(){
+    if (document.layers||document.getElementById||document.all) {
+      if( document.getElementById("comp_mobile_end").value.length > 0 ) {
+        mergemobile();
+      }
+
+      return checkemail();
+    } else {
+      return true
+    }
+  }
+</script>
+</head>
+<body style="padding:0; margin:0; -webkit-font-smoothing: antialiased; width:100% !important; background:#FFFFFF; -webkit-text-size-adjust:none;"><form action="/cgi-bin/msite?yeezy_comp%2Ba%2B0%2B0%2B0%2BDC028425%2B0%26_p%3D_2%26utm_source%3DRedEye%26utm_medium%3DEmail%26utm_campaign%3DYeezy%20Boost%20351%20Clay%26utm_content%3D0905%20Yeezy%20Clay" method="post" name="validation" id="validation"  onSubmit="return checkbae()">
+<table width="840" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#F2F2F2" class="width320">
+  <tr>
+    <td style="padding:40px; padding-bottom:0px" class="pad10"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="width320">
+      <tr>
+        <td bgcolor="#ffffff" class="width320"><img src="https://reporting.jdsports.co.uk/images/yeezy/header.jpg" width="100%" alt="Competition Header" class="width320" style="display:block"/></td>
+      </tr>
+    </table></td>
+  </tr>
+    <tr>
+    <td style="padding:40px; padding-bottom:0px" class="pad10"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="width320">
+      <tr>
+        <td class="width320"><img src="https://reporting.jdsports.co.uk/images/yeezy/body.jpg" width="100%" alt="Competition Details" class="width320" style="display:block"/></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td style="padding:40px"  class="pad10"><table width="100%" border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+        <td bgcolor="#ffffff" class="padleft">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </table>          
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="375" style="padding-left:20px; font-size:16px" class="stack-column" valign="top">
+                <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                 <tr>
+            <td style="padding-bottom:20px; font-size:16px" class="stack-column" valign="top">Firstname<span style="color:#db3939;">*</span><br>
+                <label for="textfield"></label>
+              <input type="text" name="comp_firstname" id="comp_firstname" placeholder="First" value="g{rqusU"  style="text-transform:capitalize"></td>
+              </tr>
+              <tr>
+              <td style="padding-bottom:20px; font-size:16px"class="stack-column" valign="top">Lastname<span style="color:#db3939;">*</span><br>
+                 <input type="text" name="comp_lastname" id="comp_lastname" placeholder="Last" value="isq^uOu"  style="text-transform:capitalize">
+                 </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom:20px; font-size:16px" class="stack-column">
+                      Email<span style="color:#db3939;">*</span><br>
+                      <label for="textfield">
+                      </label>
+                      <input type="text" name="comp_email" id="comp_email" value="^UQtCB4DEtwwwAUutsuq" style="text-transform:lowercase">
+                      </td>
+                    </tr>
+                    <tr>
+                    <td style="font-size:16px" class="stack-column">
+                      Paypal email address<span style="color:#db3939;">*</span><br>
+                      <label for="textfield">
+                      </label>
+                      <input type="email" name="paypal_email" id="comp_paypalemail" value="" style="text-transform:lowercase">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-top: 20px; padding-bottom:20px; font-size:16px" class="stack-column">Mobile Number<span style="color:#db3939;">*</span><br>
+                        <label for="textfield">
+                        </label>
+                        <div class="inputcontainer">  
+                          <select name="comp_countrycode" id="comp_countrycode">
+                            <option value="+44">+44</option>
+                            <option value="+33">+33</option>
+                            <option value="+46">+46</option>
+                            <option value="+32">+32</option>
+                            <option value="+31">+31</option>
+                            <option value="+49">+49</option>
+                            <option value="+34">+34</option>
+                            <option value="+39">+39</option>
+                            <option value="+358">+358</option>
+                            <option value="+45">+45</option>
+                            <option value="+6">+6</option>
+                            <option value="+61">+61</option>
+                            <option value="+353">+353</option>
+                          </select>
+                          <input type="text" name="comp_mobile_end" id="comp_mobile_end" pattern="^[1-9][0-9-+s()]*$" onfocusout="this.value = this.value.replace(/^0/, '')">
+                          <input type="hidden" name="comp_mobile" id="comp_mobile">
+                          <div class="clear"></div>
+                        </div>
+                      </td>
+                    </tr>   
+                    <tr>
+                      <td style="font-size:16px" class="stack-column">
+                        UK footwear size<span style="color:#db3939;">*</span><br> 
+                        <div class="styled-select">                     
+                         <select name="shoesize" id="shoesize">
+                              <option value=" ">Please select...</option>
+							                 <option value="3.5" >3.5</option>
+                                <option value="4" >4</option>
+                               <option value="4.5" >4.5</option> -->
+                                <option value="5" >5</option>
+                                <option value="5.5" >5.5</option> 
+                                <option value="6" >6</option>
+                                <option value="6.5" >6.5</option>
+                                <option value="7" >7</option>
+                                <option value="7.5" >7.5</option>
+                                <option value="8" >8</option>
+                                <option value="8.5" >8.5</option>
+                                <option value="9" >9</option>
+                                <option value="9.5" >9.5</option>
+								                <option value="10" >10</option>
+                                <option value="10.5" >10.5</option>
+                                <option value="11" >11</option>
+                                <option value="11.5" >11.5</option>
+                                <option value="12" >12</option>
+                                <option value="12.5" >12.5</option> 
+                                 <option value="13" >13</option> 
+                                <option value="13.5" >13.5</option>
+                                <option value="14" >14</option>
+								
+                        </select>  
+                        <br> <br><br>
+                        </div>                     
+                      </td>
+                    </tr>                 
+                  </table>
+                </td>
+              <td width="375" style="padding-left:20px" class="stack-column" valign="top">
+                <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                 <tr>
+                      <td style="font-size:16px" class="stack-column">
+                        Number and street address<span style="color:#db3939;">*</span><br>
+                        <label for="textfield">
+                        </label>
+                        <input type="text" name="comp_address1" id="comp_address1" value="C lR{^tUX lq^^Opq">
+                        
+                      </td>
+                    </tr>   
+                     <tr>
+                      <td style="padding-top: 20px; font-size:16px" class="stack-column">
+                        Address Line 2<br>
+                        <label for="textfield">
+                        </label>
+                        <input type="text" name="comp_address2" id="comp_address2" value="">
+                      </td>
+                    </tr>
+                     <tr>
+                      <td style="padding-top: 20px; font-size:16px" class="stack-column">
+                        Town/City<span style="color:#db3939;">*</span><br>
+                        <label for="textfield">
+                        </label>
+                        <input type="text" name="comp_address3" id="comp_address3" value="IUuPUu"> 
+                      </td>
+                    </tr>  
+                     <tr>
+                      <td style="padding-top: 20px; font-size:16px" class="stack-column">
+                        County<span style="color:#db3939;">*</span><br>
+                        <div class="styled-select">                     
+ <select name="comp_address4" id="comp_address4">  
+                         <option value="">Please select...</option> 
+                         <option disabled="disabled">-- England --</option>                         
+                <option value="Bedfordshire" >Bedfordshire</option>
+                        <option value="Buckinghamshire" >Buckinghamshire</option>
+                        <option value="Cambridgeshire" >Cambridgeshire</option>
+                        <option value="Cheshire" >Cheshire</option>
+                        <option value="Cleveland" >Cleveland</option>
+                        <option value="Cornwall" >Cornwall</option>
+                        <option value="Cumbria" >Cumbria</option>
+                        <option value="Derbyshire" >Derbyshire</option>
+                        <option value="Devon" >Devon</option>
+                        <option value="Dorset" >Dorset</option>
+                        <option value="Durham" >Durham</option>
+                        <option value="East Sussex" >East Sussex</option>
+                        <option value="Essex" >Essex</option>
+                        <option value="Gloucestershire" >Gloucestershire</option>
+                        <option value="Greater London" >Greater London</option>
+                        <option value="Greater Manchester" >Greater Manchester</option>
+                        <option value="Hampshire" >Hampshire</option>
+                        <option value="Hertfordshire" >Hertfordshire</option>
+                        <option value="Kent" >Kent</option>
+                        <option value="Lancashire" >Lancashire</option>
+                        <option value="Leicestershire" >Leicestershire</option>
+                        <option value="Lincolnshire" >Lincolnshire</option>
+                        <option value="Merseyside" >Merseyside</option>
+                        <option value="Norfolk" >Norfolk</option>
+                        <option value="North Yorkshire" >North Yorkshire</option>
+                        <option value="Northamptonshire" >Northamptonshire</option>
+                        <option value="Northumberland" >Northumberland</option>
+                        <option value="Nottinghamshire" >Nottinghamshire</option>
+                        <option value="Oxfordshire" >Oxfordshire</option>
+                        <option value="Shropshire" >Shropshire</option>
+                        <option value="Somerset" >Somerset</option>
+                        <option value="South Yorkshire" >South Yorkshire</option>
+                        <option value="Staffordshire" >Staffordshire</option>
+                        <option value="Suffolk" >Suffolk</option>
+                        <option value="Surrey" >Surrey</option>
+                        <option value="Tyne and Wear" >Tyne and Wear</option>
+                        <option value="Warwickshire" >Warwickshire</option>
+                        <option value="West Berkshire" >West Berkshire</option>
+                        <option value="West Midlands" >West Midlands</option>
+                        <option value="West Sussex" >West Sussex</option>
+                        <option value="West Yorkshire" >West Yorkshire</option>
+                        <option value="Wiltshire" >Wiltshire</option>
+                        <option value="Worcestershire" >Worcestershire</option>
+                        <option disabled="disabled">-- Wales --</option>
+                        <option value="Anglesey" >Anglesey</option>
+                        <option value="Breconshire" >Breconshire</option>
+                        <option value="Caernarvonshire<" >Caernarvonshire</option>
+                        <option value="Cardiganshire" >Cardiganshire</option>
+                        <option value="Carmarthenshire" >Carmarthenshire</option>
+                        <option value="Denbighshire" >Denbighshire</option>
+                        <option value="Flintshire" >Flintshire</option>
+                        <option value="Glamorgan" >Glamorgan</option>
+                        <option value="Merionethshire" >Merionethshire</option>
+                        <option value="Monmouthshire" >Monmouthshire</option>
+                        <option value="Montgomeryshire" >Montgomeryshire</option>
+                        <option value="Pembrokeshire" >Pembrokeshire</option>
+                        <option value="Radnorshire" >Radnorshire</option>
+                        <option disabled="disabled">-- Scotland --</option>
+                        <option value="Aberdeen City" >Aberdeen City</option>
+                        <option value="Aberdeenshire" >Aberdeenshire</option>
+                        <option value="Angus" >Angus</option>
+                        <option value="Argyll and Bute" >Argyll and Bute</option>
+                        <option value="City of Edinburgh" >City of Edinburgh</option>
+                        <option value="Clackmannanshire" >Clackmannanshire</option>
+                        <option value="Dumfries and Galloway" >Dumfries and Galloway</option>
+                        <option value="Dundee City" >Dundee City</option>
+                        <option value="East Ayrshire" >East Ayrshire</option>
+                        <option value="East Dunbartonshire" >East Dunbartonshire</option>
+                        <option value="East Lothian" >East Lothian</option>
+                        <option value="East Renfrewshire" >East Renfrewshire</option>
+                        <option value="Eilean Siar" >Eilean Siar</option>
+                        <option value="Falkirk" >Falkirk</option>
+                        <option value="Fife" >Fife</option>
+                        <option value="Glasgow City" >Glasgow City</option>
+                        <option value="Highland" >Highland</option>
+                        <option value="Inverclyde" >Inverclyde</option>
+                        <option value="Midlothian" >Midlothian</option>
+                        <option value="Moray" >Moray</option>
+                        <option value="North Ayrshire" >North Ayrshire</option>
+                        <option value="North Lanarkshire" >North Lanarkshire</option>
+                        <option value="Orkney Islands" >Orkney Islands</option>
+                        <option value="Perth and Kinross" >Perth and Kinross</option>
+                        <option value="Renfrewshire" >Renfrewshire</option>
+                        <option value="Scottish Borders" >Scottish Borders</option>
+                        <option value="Shetland Islands" >Shetland Islands</option>
+                        <option value="South Ayrshire" >South Ayrshire</option>
+                        <option value="South Lanarkshire" >South Lanarkshire</option>
+                        <option value="Stirling" >Stirling</option>
+                        <option value="West Dunbartonshire" >West Dunbartonshire</option>
+                        <option value="West Lothian" >West Lothian</option>
+                        <option disabled="disabled">-- Northern Ireland --</option>
+                        <option value="Antrim" >Antrim</option>
+                        <option value="Armagh" >Armagh</option>
+                        <option value="Down" >Down</option>
+                        <option value="Fermanagh" >Fermanagh</option>
+                        <option value="Derry and Londonderry" >Derry and Londonderry</option>
+                        <option value="Tyrone" >Tyrone</option>
+                        </select><br>
+
+</div>
+                      </td>
+                    </tr>                                                   
+                    <tr>
+                      <td style="padding-top: 20px; font-size:16px" class="stack-column">
+                        Postcode<span style="color:#db3939;">*</span><br>
+                        <label for="textfield">
+                        </label>
+                        <input type="text" name="comp_postcode" id="comp_postcode" value="jXCcS$" style="text-transform:uppercase">
+                      </td>
+                    </tr>                                    
+                  <tr>
+                    <td style="font-size:16px; padding-bottom: 10px; padding-top:20px;">Communication preferences<br />
+                      <span style="font-size: 12px; line-height: 16px;"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                        <tr>
+                          <td style="font-size:16px" width="60">
+                            <input name="emailhold" class="hide" type="checkbox" id="emailhold" >
+                            <label for="emailhold"></label>
+                            <label for="emailhold">Email</label>
+                            <input name="emailpermit" class="hide" type="hidden" value="mN~V" id="emailpermit">
+                          </td>
+                          <td style="font-size:16px" width="60">
+                            <input name="smshold" class="hide" type="checkbox" id="smshold" >
+                            <label for="smshold"></label>
+                            <label for="smshold">SMS</label>
+                            <input name="sms_optout" class="hide" type="hidden" value="" id="sms_optout">
+                          </td>
+                          <td>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 11px; line-height: 14px; padding-top: 10px; padding-right:10px;">
+                      By ticking any of the above you agree to receive marketing communications from JD Sports Fashion PLC via the channels selected. We will use your data in accordance with our <a href="https://www.jdsports.co.uk/customer-service/privacy/" target="_blank" title="Privacy Policy" style="color: #000000;">Privacy Policy</a>.<br /><br />
+                      By submitting the form you agree to the <a href="https://www.jdsports.co.uk/customer-service/terms/" target="_blank" title="Terms &amp; Conditions" style="color: #000000;">Terms & Conditions</a> below.
+                    </td>
+                  </tr>
+                </table>
+                <br>
+                <input alt="Submit now  &gt;&gt;" type="submit" name="submit" id="submit" value="ENTER NOW" />
+                <input type="hidden" name="comp_yeezy_1" value="1">
+              </td>
+            </tr>
+          </table>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </table></td>
+      </tr>
+    </table></td>
+  </tr>
+    <tr>
+    <td style="padding:40px; padding-top:0px" class="pad10"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="width320">
+      <tr>
+        <td bgcolor="#F2F2F2" class="width320" style="color: #000000; padding-left:40px; padding-right:40px; padding-bottom:20px">
+<strong style="text-decoration: underline;">Yeezy Boost 350 V2 Black JDX Exclusive Raffle </strong>
+<br /><br />
+By taking part in this competition you accept and agree to these terms and conditions. If you do not agree with any of these terms and conditions, then you should not take part in the competition. It is your responsibility to ensure that you review the current terms and conditions before entering the competition. We, JD Sports Fashion plc ("JD Sports"), recommend that you print and store or save a copy of these terms and conditions for future reference during the competition. <strong>JD Sports</strong> is the promoter of this competition. 
+<br /><br />
+<strong style="text-decoration: underline;">1.&nbsp;What can you win? </strong>
+<br /><br />
+There will be 4156 winners who will each win the opportunity to purchase one pair of adidas Yeezy Boost 350 V2 Black (the <strong>"Prize"</strong>) via PayPal only.
+<br /><br />
+The Trainers are subject to availability (including availability of sizes, styles and colours). The Prize may not be exchanged for a cash value, nor is it transferable. The Prize is subject to winner confirmation (i.e. <strong>JD Sports</strong> has been able to contact winners and has been able to confirm eligibility). <strong>JD Sports</strong> has the right to change, alter or withdraw the raffle or the Prize at any time due to any change in any applicable law or any events outside the control of <strong>JD Sports</strong>. <strong>JD Sports</strong> shall not be responsible for any delay, cancellation or rescheduling of the raffle or the Prize. If any part of the Prize is not available or paid for through PayPal by 12:00pm on 6th May 2019 (for whatever reason), <strong>JD Sports</strong> is under no obligation to supply an alternative Prize and any unclaimed Trainers will go into general sale online at 07:00am on the 7th May 2019.
+<br /><br />
+<strong style="text-decoration: underline;">2.&nbsp;<strong style="text-decoration: underline;">What is excluded from the Prize?</strong> </strong>
+<br /><br />
+It is the winners' responsibility to organise and pay for anything excluded from the Prize. 
+<br /><br />
+<strong style="text-decoration: underline;">3.&nbsp;Who can enter?</strong>
+<br /><br />
+To be eligible for the raffle, customers must have signed up to JDX Unlimited (<strong>JD Sports</strong> &pound;9.99 Membership offering) via the <strong>JD Sports</strong> app by 11:59pm on the 4th June 2019. <strong>JD Sports</strong> reserve the rights to open this promotion to members who have not bought JDX.
+<br /><br />
+Entrants must be aged 18 years or over and, if successful, be available to purchase the trainers online via PayPal only by 12:00pm on 6th June 2019. Entrants under the age of 18 years old or over and, if successful, be available to pay the PayPal invoice that <strong>JD Sports</strong> will have raised.
+<br /><br />
+Employees (and their immediate family) of the <strong>JD Sports</strong> group ( <a href="http://www.jdplc.com/our-group/sports-fashion.aspx" target="_blank" style="text-decoration: underline; color: #000000;">http://www.jdplc.com/our-group/sports-fashion.aspx</a>), or anyone else professionally connected with this raffle are not eligible to enter the raffle. <strong>JD Sports</strong> reserves the right (at its sole discretion) to decide if the eligibility criteria are met. If the eligibility criteria are not met, the entry will be invalid.
+<br /><br />
+<strong style="text-decoration: underline;">4.&nbsp;How to enter</strong>
+<br /><br />
+To be eligible for the raffle, customers must have signed up to JDX Unlimited (<strong>JD Sports</strong> free next day delivery offering) via the <strong>JD Sports</strong> app by 11:59pm on the 4th June 2019.
+<br /><br />
+From the 25th May JDX members will be sent an exclusive raffle email with a link to the JDX raffle landing page. Entrants will have from 25th May 2019 to 11:59pm on 5th June 2019 to enter their full details on the landing page. This includes - entering their name, email address, PayPal registered email address, UK shoe size, FULL address & postcode and all other fields within the form. Incomplete entries will be void from the raffle.
+<br /><br />
+Internet service providers' fees may apply when accessing the internet. No purchase is necessary to enter the competition.
+<br /><br />
+By submitting any films or photographs as part of the competition and by entering the competition entrants agree that <strong>JD Sports</strong> (and its affiliates) may use any films or photographs uploaded to market and promote the competition and for general marketing purposes.
+<br /><br />
+Participation is limited to one entry per person. If more than one such entry is received, only the first entry will be accepted. No responsibility is taken for entries that are lost, delayed, misdirected or incomplete or cannot be delivered or entered for any technical or other reason.
+<br /><br />
+<strong style="text-decoration: underline;">5.&nbsp;Closing Times </strong>
+<br /><br />
+The raffle will be open on the 25th May 2019 at 05:00am. Yeezy Boost 350 V2 are available to purchase via PayPal by successful entrants only, between point of being notified from 11:00am on the 28th May 2019 until 12:00pm on the 6th June 2019. Any entries received after this date and time will not be valid. 
+<br /><br />
+<strong style="text-decoration: underline;">6.&nbsp;How are winners selected? </strong>
+<br /><br />
+Winners are decided on a first come first served basis and are allocated according to the number of Yeezy Boost 350 V2 trainers available in each size. The decision of <strong>JD Sports</strong> is final and binding on all entrants. No correspondence will be entered regarding the selection of the winners (other than with the winners themselves).
+<br /><br />
+The winners will be notified via a PayPal notification from 11:00am on the 28th May 2019 and must complete the PayPal transaction by 12:00pm on the 6th June 2019 to secure their pair of Yeezy Boost 350 V2 Black. Once you have completed your PayPal transaction you will receive a confirmation email from <strong>JD Sports</strong> by 6pm on the day of payment.
+<br /><br />
+If funds are in your PayPal account, these will automatically be deducted from your account. If you have a card/bank account linked to your PayPal account which is to cover insufficient PayPal balances, this will take 2/3 days to debit the card/account used.
+<br /><br />
+Winners will only be able to purchase the size selected nominated during sign up to the raffle.
+<br /><br />
+<strong style="text-decoration: underline;">7.&nbsp;Winners' Responsibilities </strong>
+<br /><br />
+It is the winners' responsibility to: (i) organise and pay costs for anything excluded from the Prize, including travel to and from a Participating Store and refreshments; (ii) complete all stages of the How to enter section above and present evidence of such completion to a member of staff in a Participating Store; (iii) provide accurate contact details; (iv) provide valid proof of age, which is required to enter the competition; (v) adhere to local laws in the UK (vi) comply with any rules, instructions, requirements, terms and conditions or regulations of the event organiser.] <strong>JD Sports</strong> will not be liable to the winners or any other persons where they fail to comply with such responsibilities and any such failure may result in forfeiture of the Prize. 
+<br /><br />
+<strong style="text-decoration: underline;">8.&nbsp;Personal information  </strong>
+<br /><br />
+By ticking the appropriate opt in boxes you agree that you will be opted in to receive regular communication from <strong>JD Sports</strong> (and its affiliates). For a list of <strong>JD Sports</strong> affiliates who may send marketing communications, please click on this link:  <a href="http://www.jdplc.com/our-group/sports-fashion.aspx" target="_blank" style="text-decoration: underline; color: #000000;">http://www.jdplc.com/our-group/sports-fashion.aspx</a>). <strong>JD Sports</strong> will use personal information which you provide, or which we obtain through our dealings with you, to sign you up to marketing materials provided by <strong>JD Sports</strong> (and its affiliates) and to administer the competition. We may also use your personal data to tell you about <strong>JD Sports</strong> (and <strong>JD Sports</strong> affiliates) products and offers, and for market research including analysis and development of our products and customer relationships. For full details on how <strong>JD Sports</strong> uses your information, view our Privacy Policy here:  <a href="http://www.jdsports.co.uk/customer-service/privacy" target="_blank" style="text-decoration: underline; color: #000000;">http://www.jdsports.co.uk/customer-service/privacy</a>. You can unsubscribe at any time by following the instructions contained in the promotional emails. If you do not wish to receive marketing communication from <strong>JD Sports</strong> (and <strong>JD Sports</strong> affiliates) please do not tick the appropriate opt in boxes above.
+<br /><br />
+<strong style="text-decoration: underline;">9.&nbsp;Publicity </strong>
+<br /><br />
+By taking part in the competition, entrants agree to participate in publicity at <strong>JD Sports</strong>' request if they are a winner of the competition. Entrants agree that <strong>JD Sports</strong> (or any third party nominated by <strong>JD Sports</strong>) may in its sole discretion use their name, image, any relevant video footage of them and comments relating to the Prize and their experience for future promotional, marketing and publicity purposes in any media worldwide without notice and without any fee being paid (including for the avoidance of doubt when responding to any third party). 
+<br /><br />
+<strong><strong>JD Sports</strong> reserves the right to withdraw the Prize (or any part of it) if a winner breaches any of the terms in these terms and conditions or if they are found to have acted in a dishonest or fraudulent manner.</strong> 
+<br /><br />
+If you wish to contact <strong>JD Sports</strong> in relation to the competition, please use the following address: Yeezy Boost 350 V2 Black Online Competition, JD Sports Fashion plc, Edinburgh House, Hollinsbrook Way, Pilsworth, Bury, Lancashire, BL9 8RR, United Kingdom.
+<br /><br />
+
+</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</form>
+<img alt="" height="1" src="/cgi-bin/rr//images/blank.gif" width="1" />
+</body>
+</html>
