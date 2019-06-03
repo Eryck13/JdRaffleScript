@@ -14,9 +14,15 @@ def main():#'✓'
     #browser = webdriver.Chrome()
     #browser.get(url)
     print('Welcome to JDsports Raffle Script!')
-    user = input('please enter the name for your domain with : ')
+    gmail = input('Are you using a Gmail? Enter "Yes"or "No".')
+    
+    if gmail == 'Yes':    
+        user = input('Please enter the username of you gmail account(InsertHere@gmail.com) Do not include @.') 
+    elif gmail == 'No':
+        user = input('please enter the name for your domain with : ')
     #addy = input("please enter your address")
-    domain = input('insert a domain with @ : ')
+        domain = input('insert a domain with @ : ')
+    
     #passw = input('Please enter a password for all your accounts: ')
     amount = input('please enter the raffle submissions you would like to make : ')
     print('\n')
@@ -44,7 +50,10 @@ def main():#'✓'
         session.cookies.clear()
         randtime = random.randint(1,5) 
        # proxy = random.choice(proxylist)
-        domainfinal = user + str(random.randint(1,100000)) + domain
+        if gmail == 'No':
+            domainfinal = user + str(random.randint(1,10000)) + domain
+        elif gmail == 'Yes':
+            domainfinal = user + '+' + str(random.randint(1,10000)) + '@gmail.com'
         #passwfinal = passw + str(random.randint(1,10000))
         randletter = random.choice(str(string.ascii_uppercase[0:25]))
         randletter2 = random.choice(str(string.ascii_uppercase[0:25]))
