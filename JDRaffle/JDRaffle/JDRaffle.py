@@ -17,7 +17,7 @@ def main():#'✓'
     gmail = input('Are you using a Gmail? Enter "Yes"or "No".')
     
     if gmail == 'Yes':    
-        user = input('Please enter the username of you gmail account(InsertHere@gmail.com) Do not include @.') 
+        user = input('Please enter the username of you gmail account(InsertHere@gmail.com) Do not include @gmail.com.') 
     elif gmail == 'No':
         user = input('please enter the name for your domain with : ')
     #addy = input("please enter your address")
