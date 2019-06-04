@@ -14,17 +14,18 @@ def main():#'✓'
     #browser = webdriver.Chrome()
     #browser.get(url)
     print('Welcome to JDsports Raffle Script!')
+    proxychoice = input('Will you be using proxies? Please enter "Yes" or "No": ')
     gmail = input('Are you using a Gmail? Enter "Yes"or "No".')
     
     if gmail == 'Yes':    
         user = input('Please enter the username of you gmail account(InsertHere@gmail.com) Do not include @gmail.com.') 
     elif gmail == 'No':
-        user = input('please enter the name for your domain with : ')
+        user = input('Please enter the name for your domain with : ')
     #addy = input("please enter your address")
-        domain = input('insert a domain with @ : ')
+        domain = input('Insert a domain with @ : ')
     
     #passw = input('Please enter a password for all your accounts: ')
-    amount = input('please enter the raffle submissions you would like to make : ')
+    amount = input('Please enter the amount of raffle submissions you would like to make : ')
     print('\n')
     
     ranfname = open('firstnames.txt', 'rt').read().splitlines()
@@ -39,8 +40,8 @@ def main():#'✓'
     town = 'London'
     county='Greater London'
     postcode ='NW54JB'
-    # with open('proxiesundftd.txt', 'r') as r:
-        #proxylist = r.read().splitlines()
+    with open('proxies.txt', 'r') as r:
+        proxylist = r.read().splitlines()
 
     for i in range(int(amount)): 
         print('Started Entry',i,'@','[',datetime.datetime.utcnow(),']')
@@ -49,7 +50,8 @@ def main():#'✓'
         session = requests.Session()
         session.cookies.clear()
         randtime = random.randint(1,5) 
-       # proxy = random.choice(proxylist)
+        if proxychoice == 'Yes':
+            proxy = random.choice(proxylist)
         if gmail == 'No':
             domainfinal = user + str(random.randint(1,10000)) + domain
         elif gmail == 'Yes':
@@ -96,7 +98,7 @@ def main():#'✓'
                            }
         
         post = session.post(url,data=load)
-        sleep(randtime)                      
+        #sleep(randtime)                      
         #l= open("debugjd.txt","a")
         #l.write("\n" + post.text)
         #print(post.status_code)
