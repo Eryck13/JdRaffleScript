@@ -1,1 +1,4 @@
-Enter various forms of jigged addy's below one per line (delete this line after done).
+Apt 1
+Flat 1
+flat 1
+apt 1
